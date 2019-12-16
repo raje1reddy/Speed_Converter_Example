@@ -9,6 +9,7 @@ import static org.junit.Assert.*;
 
 
 
+
 public class SpeedConverterTest {
     SpeedConverter speedConverter;
     @BeforeClass
@@ -30,84 +31,66 @@ public class SpeedConverterTest {
 
 
     }
-/*
-    @Test
-    public void printDayOfTheWeek1() {
-        int result = speedConverter.
-        System.out.println(result);
-        int expectedresult = 0;
-        assertEquals(expectedresult,result);
-    }
-
-
-    @Test
-    public void printDayOfTheWeek2() {
-        int result = speedConverter.getRankBaseOfScore(1);
-        System.out.println(result);
-        int expectedresult = 1;
-        assertEquals(expectedresult,result);
-    }
-    @Test
-    public void printDayOfTheWeek3() {
-        int result = speedConverter.getRankBaseOfScore(2);
-        System.out.println(result);
-        int expectedresult = 2;
-        assertEquals(expectedresult,result);
-    }
-
-    @Test
-    public void printDayOfTheWeek4() {
-        int result = speedConverter.getRankBaseOfScore(3);
-        System.out.println(result);
-        int expectedresult = 3;
-        assertEquals(expectedresult,result);
-    }
-
-    @Test
-    public void printDayOfTheWeek5() {
-        int result = speedConverter.getRankBaseOfScore(4);
-        System.out.println(result);
-        int expectedresult = 4;
-        assertEquals(expectedresult,result);
-    }
-
-    @Test
-    public void printDayOfTheWeek6() {
-        int result = speedConverter.getRankBaseOfScore(5);
-        System.out.println(result);
-        int expectedresult = 5;
-        assertEquals(expectedresult,result);
-    }
-
-    @Test
-    public void printDayOfTheWeek7() {
-        int result = speedConverter.getRankBaseOfScore(6);
-        System.out.println(result);
-        int expectedresult = 6;
-        assertEquals(expectedresult,result);
-    }
-    @Test
-    public void printDayOfTheWeek8() {
-        int result = speedConverter.getRankBaseOfScore(7);
-        System.out.println(result);
-        int expectedresult = 7;
-        assertEquals(expectedresult,result);
-    }
-
-    @Test
-    public void printDayOfTheWeek9() {
-        int result = speedConverter.getRankBaseOfScore(-1);
-        System.out.println(result);
-        int expectedresult = -1;
-        assertEquals(expectedresult,result);
-    }
-*/
     @Test
     public void toMilesPerHour1() {
-       // double result = speedConverter.
+        long milesresult = SpeedConverter.toMilesPerHour(10.5);
+        System.out.println(" Miles = " + milesresult);
+        SpeedConverter.printConversion(10.5);
+        long expectedresult = 7;
+        assertEquals(expectedresult,milesresult);
+    }
+
+
+
+
+    @Test
+    public void toMilesPerHour10() {
+        long milesresult = SpeedConverter.toMilesPerHour(0.5);
+        System.out.println(" Miles = " + milesresult);
+        SpeedConverter.printConversion(0.5);
+        long expectedresult = 0;
+        assertEquals(expectedresult,milesresult);
+    }
+
+
+    @Test
+    public void toMilesPerHour1000() {
+        long milesresult = SpeedConverter.toMilesPerHour(10000.5);
+        System.out.println(" Miles = " + milesresult);
+        SpeedConverter.printConversion(10000.5);
+        long expectedresult = 6215;
+        assertEquals(expectedresult,milesresult);
     }
 
     @Test
-    public void printConversion() {
+    public void toMilesPerHournegative() {
+        long milesresult = SpeedConverter.toMilesPerHour(-100.5);
+        System.out.println(" Miles = " + milesresult);
+        SpeedConverter.printConversion(-100.5);
+        long expectedresult = -1;
+        assertEquals(expectedresult,milesresult);
     }
+
+    @Test
+    public void toMilesPerHournegativelarge() {
+        long milesresult = SpeedConverter.toMilesPerHour(-1000000.5);
+        System.out.println(" Miles = " + milesresult);
+        SpeedConverter.printConversion(-1000000.5);
+       long expectedresult = -1;
+        assertEquals(expectedresult,milesresult);
+    }
+    @Test
+    public void toMilesPerHourlarge() {
+        long milesresult = SpeedConverter.toMilesPerHour(1000000000.5);
+        System.out.println(" Miles = " + milesresult);
+        SpeedConverter.printConversion(1000000000.5);
+        long expectedresult = 621504040;
+        assertEquals(expectedresult,milesresult);
+    }
+
+
+
+
+
+
 }
